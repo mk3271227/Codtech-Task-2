@@ -72,29 +72,35 @@ $stop;<br>
 endmodule<br>
 
 <br>
+Name:MUSKAN KUMARI<br>
+Company:CODTECH IT SOLUTIONS<br>
+ID:CT4VLSI2707<br>
+Domain:VLSI<br>
+Duration:June to July 2024<br>
+Mentor:SRAVANI GOUNI<br>
 Project Overview: Designing and Testing a Finite State Machine (FSM) in Verilog using ModelSim<br>
 Objective<br>
 The primary objective of this project is to design, implement, simulate, and verify a Finite State Machine (FSM) using Verilog and ModelSim. The project aims to provide a practical understanding of FSM design in digital systems and demonstrate the use of hardware description languages (HDL) and simulation tools in the VLSI design process.<br>
 
 Key Activities<br>
-FSM Design<br><br>
+FSM Design<br>
 
 The FSM's state diagram, including states and transitions, was defined.<br>
 The states were encoded, and state transition logic was defined.<br>
-FSM Implementation in Verilog<br><br>
+FSM Implementation in Verilog<br>
 
 Verilog code was written to implement the FSM based on the defined state diagram.<br>
 The code included state encoding, state registers, and next-state logic.<br>
-Testbench Development<br><br>
+Testbench Development<br>
 
 A Verilog testbench was written to simulate the FSM.<br>
 A test sequence was developed to validate the FSM’s behavior under various conditions.<br>
-Simulation and Verification<br><br>
+Simulation and Verification<br>
 
 ModelSim was used to compile and simulate the Verilog code.<br>
 It was verified that the FSM transitions correctly between states as per the defined state diagram.<br>
 Simulation waveforms were analyzed to ensure the FSM operates as expected.<br>
-Detailed Description<br><br>
+Detailed Description<br>
 FSM Design<br>
 State Diagram: The FSM was defined with states and transitions. For example, a 3-state FSM with states A, B, and C where:<br>
 A transitions to B.<br>
