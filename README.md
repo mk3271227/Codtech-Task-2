@@ -1,68 +1,72 @@
 # Codtech-Task-2
 // CODE AND TESTBENCH FOR FINITE STATE MACHINE //
 
-module fsm (
-input wire clk,
-input wire reset,
-output reg [1:0] state
-);
-// State encoding
-parameter A = 2'b00, B = 2'b01, C = 2'b10;
-// State register
-reg [1:0] next_state;
-always @(posedge clk or posedge reset) begin
-if (reset)
-state <= A;
-else
-state <= next_state;
-end
-always @(*) begin
-case (state)
-A: next_state = B;
-B: next_state = C;
-C: next_state = A;
-default: next_state = A;
-endcase
-end
-endmodule
+module fsm (<br>
+input wire clk,<br>
+input wire reset,<br>
+output reg [1:0] state<br>
+);<br>
+// State encoding<br>
+parameter A = 2'b00, B = 2'b01, C = 2'b10;<br>
+// State register<br>
+reg [1:0] next_state;<br>
+always @(posedge clk or posedge reset) begin<br>
+if (reset)<br>
+state <= A;<br>
+else<br>
+state <= next_state;<br>
+end<br>
+always @(*) begin<br>
+case (state)<br>
+A: next_state = B;<br>
+B: next_state = C;<br>
+C: next_state = A;<br>
+default: next_state = A;<br>
+endcase<br>
+end<br>
+endmodule<br>
+<br>
+<br>
 
 
-/////////////  TESTBENCH  ////////////////
+/////////////  TESTBENCH  ////////////////<br>
+<br>
+<br>
 
 
-module fsm_tb;
-// Inputs
-reg clk;
-reg reset;
-// Outputs
-wire [1:0] state;
-// Instantiate the FSM
-fsm uut (
-.clk(clk),
-.reset(reset),
-.state(state)
-);
-// Clock generation
-initial begin
-clk = 0;
-forever #5 clk = ~clk;
-end
-// Test sequence
-initial begin
-// Initialize reset
-reset = 1;
-#10 reset = 0;
-// Check transitions
-#20;
-if (state != 2'b01) $display("Test Failed at time %t: expected 
-state 01, got %b", $time, state);
-#20;
-if (state != 2'b10) $display("Test Failed at time %t: expected 
-state 10, got %b", $time, state);
-#20;
-if (state != 2'b00) $display("Test Failed at time %t: expected 
-state 00, got %b", $time, state);
-$display("All tests passed");
-$stop;
-end
-endmodule
+module fsm_tb;<br>
+// Inputs<br>
+reg clk;<br>
+reg reset;<br>
+// Outputs<br>
+wire [1:0] state;<br>
+// Instantiate the FSM<br>
+fsm uut (<br>
+.clk(clk),<br>
+.reset(reset),<br>
+.state(state)<br>
+);<br>
+// Clock generation<br>
+initial begin<br>
+clk = 0;<br>
+forever #5 clk = ~clk;<br>
+end<br>
+// Test sequence<br>
+initial begin<br>
+// Initialize reset<br>
+reset = 1;<br>
+#10 reset = 0;<br>
+// Check transitions<br>
+#20;<br>
+if (state != 2'b01) $display("Test Failed at time %t: expected <br>
+state 01, got %b", $time, state);<br>
+#20;<br>
+if (state != 2'b10) $display("Test Failed at time %t: expected <br>
+state 10, got %b", $time, state);<br>
+#20;<br>
+if (state != 2'b00) $display("Test Failed at time %t: expected <br>
+state 00, got %b", $time, state);<br>
+$display("All tests passed");<br>
+$stop;<br>
+<br>
+endmodule<br>
